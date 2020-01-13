@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>MENÚ</title>
+
+	<style type="text/css">
+
+		@keyframes animacionEjemplo{
+			from{
+				background-color: green;
+				font-size: 12pt;
+				width: 300px;
+				height: 100px;
+				top:0px;
+			}
+			to{
+				background-color: yellow;
+				font-size: 24pt;
+				width: 500px;
+				height: 300px;
+				top: 250px;
+			}
+		}
+
+		nav {
+			/*width: 25%; este tamaño le daría para cuando tengo el menú verticalmente, no horizontal, porque no me cabría*/  
+		}
+
+		nav ul {
+			list-style: none; /* con esto te quita los puntos de delante de la lista */
+			/* list-style-image: url(img/loc.png) con esto te sustituye los puntos por la img, hay que darle tamaño, sale muy grande */
+			padding: 0;
+			margin: 0;
+			display: flex; /* para que todos los li se coloquen en línea */
+		}
+
+		nav ul a { /* le pongo width al nav, no a las cajas que hago aquí, así le doy el tamaño a las cajas, que ocupará lo que ocupe el nav al completo */ /* ahora pongo nav ul a porque así me aplica la propiedad a la caja completa y a la a, porque quiero que el enlace esté en toda la caja */
+			border: 1px solid black;
+			margin: 2px; /* distancia que hay entre cuadro y cuadro */
+			padding: 10px; /* la distancia que hay desde el texto al cuadro */
+			flex-grow: 1; /* reparte el espacio que sobra entre las cajas (si le doy proporción se lo repartirían de otra forma, al tener flex-grow le tendría que dar la proporción de cada cosa)*/
+			text-align: center;
+			text-decoration: none;
+			color: black;
+			height: 60px;
+			align-self: center;
+
+			transition-property: height;
+			transition-duration: 2s;
+			transition-delay: 1s;
+			transition-timing-function: ease;
+			/*transition: height 3s, background-color 2s;*/
+
+		}
+		nav ul a.activa {
+
+		}
+		/* seudo clase hover, cuando tu sobre cualquier selector pones :hover dices los estilos que quieres que tenga cuando el ratón pasa por encima, por lo que solo pones los estilos que quieres que cambien */
+
+		nav ul a:hover {
+			background-color: red;
+			color: white;
+
+			 height: 150px; /*cambiaría el tamaño de la caja cuando paso sobre ella */
+			 font-size: 50px;
+		}
+
+		/*nav:hover ul a { aquí lo que hago es que cuando ponga el ratón sobre cualquier parte del nav se pondrá todo el nav al completo con las características que diga abajo. El :hover se puede poner sobre cualquier selector CSS;
+			background-color: black;
+			color: white;  PODEMOS HACER CUALQUIER COSA CON EL HOVER!! DESDE CAMBIAR EL TAMAÑO HASTA HACERLO INVISIBLE
+
+		}*/
+
+		/*Transformaciones, traslacion rotacion escalado diagonal */
+		main div{
+			text-align: center;
+			width: 300px;
+			height: 100px;
+			background-color: yellow;
+			border: 1px solid black;
+			transition: transform 1s, opacity 0.5s;
+			animation: animacionEjemplo 2s;
+			animation-delay: 1s;
+			animation-direction:alternate;
+			animation-iteration-count: infinite;
+
+
+		}
+		main div:hover{  /*Se aplica el ultimo transform a no ser que lo hagamos con una matriz con todos los parametros juntos*/
+			/*transform: translate(50px,20px);
+			transform: rotate(90deg);
+			transform: scale(0.8,0.8);
+			transform: skew(0deg,20deg);
+			matriztransform: matrix(1.2,0,-0.3,1.2,40,50);
+			transform: rotateX(200deg);
+			opacity: 0;*/
+			position: relative;
+			animation: animacionEjemplo 2s;
+			animation-delay: 1s;
+			animation-direction:alternate;
+			animation-iteration-count: infinite;
+			/*animation-fill-mode: forwards; asi se queda en la ultima diapositiva de la animacion*/
+
+		}
+
+
+
+	</style>
+
+</head>
+<body>
+
+	<nav>
+		<ul>
+			<a href="#"><li>Inicio</li></a>
+			<a href="#"><li>Quienes Somos</li></a>
+			<a href="#"><li>Dónde estamos</li></a>
+			<a href="#"><li>Que hacemos</li></a>
+			<a href="#"><li>Contacto</li></a>
+			<a href="#"><li>Aviso Legal</li></a>
+		</ul>
+	</nav>
+	<main>
+	<div>Jaja si </div></main>
+</body>
+</html>
