@@ -1,0 +1,12 @@
+
+ˆsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(öÞÔÜH‚RMINORZ
+CODE_SMELL
+Zsquid:S1659
+"!Declare "rep" on a separate line.(Á£®îûÿÿÿÿ8º§¢úø-H¢RMINORZ
+CODE_SMELL
+]squid:S1659
+"$Declare "tirada" on a separate line.(Á£®îûÿÿÿÿ8ã–³úø-H¦RMINORZ
+CODE_SMELL
+Ysquid:S1659
+" Declare "n5" on a separate line.(Á£®îûÿÿÿÿ8Ã‚¾úø-H«RMINORZ
+CODE_SMELL
