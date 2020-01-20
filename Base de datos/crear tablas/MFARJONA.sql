@@ -102,4 +102,28 @@ CREATE TABLE SAM01_ALUMNOS (
 --ALTERAR TABLA PARA PONER CLAVE EXTERNA
 ALTER TABLE SAM01_NOTAS
 ADD CONSTRAINT FK_SAM01_NOTAS_SAM01_ALUMNOS FOREIGN KEY (NUM_ALUM) REFERENCES SAM01_ALUMNOS(NUM_ALUM)
+
+--POLITICAS DE BORRADO
 ON DELETE SET NULL/*CASCADE, SET DEFAULT, NOTHING*/;
+
+--MODIFICAR TABLAS
+--Nombre
+ALTER TABLE nombreViejo RENAME TO nombreNuevo;
+
+--ADD Columnas
+ALTER TABLE facturas ADD (fecha DATE);
+--DROP Columnas
+ALTER TABLE facturas DROP (fecha);
+--MODI Columnas
+ALTER TABLE facturas MODIFY(fecha TIMESTAMP);
+/*Incrementar precisión o anchura de los tipos de datos
+Solo se puede reducir la anchura si la anchura máxima de un campo si esa columna posee nulos en todos los registros, o todos los valores existentes tienen un tamaño menor o igual a la nueva anchura.
+Se puede pasar de CHAR a VARCHAR2 y viceversa (si no se modifica la anchura)
+Se puede pasar de DATE a TIMESTAMP y viceversa
+Cualquier otro cambio solo es posible si la tabla está vacía
+Si, a través de este comando, modificamos el valor de la propiedad DEFAULT de una tabla, dicho cambio solo tendrá efecto en la inserción de nuevas filas.*/
+--REN Columnas
+ALTER TABLE facturas RENAME COLUMN fecha TO fechaYhora;
+
+
+
