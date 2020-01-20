@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul a{
+    padding: 3px;
+    width: 280px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 38px;
+    align-self: center;
+    background-color: rgb(83, 83, 83);  
+    font-size: 18pt;
+    color: white;
+    border-bottom: 2px solid black;
+    align-self: center;
+}
+
+a:hover{
+    height: 55px;
+    line-height: 42px;
+    background-color: rgb(155, 0, 0);
+    font-size: 24px;
+    border-bottom: 4px solid black;
+
+}
+

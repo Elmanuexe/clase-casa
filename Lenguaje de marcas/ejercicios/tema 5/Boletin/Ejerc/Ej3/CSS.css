@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul a{
+    margin: 1px;
+    padding: 3px;
+    width: 280px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 35px;
+    align-self: center;
+    background-color: khaki;
+    background-image: url(img/pict.png);   
+    font-size: 22pt;
+    color: grey; 
+}
+
+nav ul a#id5:hover{
+    color: rgba(0, 0, 0, 0);
+    background-position: 0px 50px;
+}
+
+nav ul a#id4:hover{
+    color: rgba(0, 0, 0, 0);
+    background-position: 0px 100px;
+}
+
+nav ul a#id3:hover{
+    color: rgba(0, 0, 0, 0);
+    background-position: 0px 150px;
+}
+
+nav ul a#id2:hover{
+    color: rgba(0, 0, 0, 0);
+    background-position: 0px 200px;
+}
+
+nav ul a#id1:hover{
+    color: rgba(0, 0, 0, 0);
+    background-position: 0px 250px;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    width: 100%;
+    height: 57px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(17, 24, 28);
+}
+
+.izq{
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 0px;
+}
+
+.der{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 0px;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    /* color: rgba(255, 255, 255, 0.8); */
+    font-family: Lato;
+    color: #aeb4b7;
+    font-size: 13.5px;
+    overflow: hidden;
+}
+
+a li{
+    transition: .60s;
+}
+
+.text{
+    margin-left: 20px;
+    padding-top: 20px;
+    height: 57px;
+    text-align: center;
+}
+
+a:hover{
+    color: white;
+}
+
+.busq{
+    background-image: url(img/busqueda.png);
+    background-position: 0px 114px;
+}
+
+.busq:hover{
+    background-position: bottom;
+}
+
+.logo{
+    width: 57px;
+    transition: width 2s; 
+    transition: all 2s 1s aese-in;
+}
+
+.logotxt{
+    z-index: -1;
+    position: relative;
+    top: -23px;
+    left: 10px;
+}
+
+.logo:hover{
+    width: 120px;
+    z-index: 10;
+}
+
+

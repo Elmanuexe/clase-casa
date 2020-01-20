@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    width: 200px;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    background-color: beige;
+    color: black;
+}
+
+ul{
+    list-style: none;
+}
+
+nav{
+    margin: 30px;
+    
+}
+
+.me{
+    display: flex;
+    justify-content: space-around;
+}
+
+.m{
+    text-align: center;
+    
+    
+}
+
+.me li a:hover{
+    background-color: rgb(145, 143, 143); 
+}
+
+.sub{
+    height: 0px;
+    overflow: hidden;
+    transition: height 3s; 
+}
+
+.sub a{
+    background-color: rgb(206, 127, 127);
+}
+
+
+.m#m1:hover .sub#sub1{
+    height: 190px;
+}
+
+.m#m2:hover .sub#sub2{
+    height: 190px;
+}
+
+.m#m3:hover .sub#sub3{
+    height: 190px;
+}
+
+.m#m4:hover .sub#sub4{
+    height: 190px;
+}
+
+
