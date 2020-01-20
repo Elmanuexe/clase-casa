@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Ejercicio6</title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+		nav{
+			list-style: none;
+			padding: 0px;
+			margin: 0px;
+			display: flex; 
+			background-color: rgb(83, 83, 83);
+			height: 50px;
+			justify-content: center;
+			border-bottom: 2px solid black;
+		}
+		ul{
+			list-style: none;
+		}
+
+		#desp li a{
+			font-family: arial;
+			color: white; 
+			padding: 10px; 
+			text-align: center;
+			text-decoration: none;
+			font-size: 24px;
+			width: 250px;
+			display: block;
+		}
+		#desp li:hover{
+			background-color: rgb(155, 0, 0);
+			font-size: 30px;
+		}
+		#desp > li{
+			float: left;
+		}
+		#desp li ul{
+			overflow: hidden;
+			height: 0px;
+		}
+		#desp li:hover ul{
+			overflow: hidden;
+			height: 100%;
+			transition: 2s;
+		}
+		#estilo a{
+			background-color: rgb(84, 84, 84);
+		}
+		#estilo a:hover{
+			background-color: rgb(155, 0, 0);
+			font-size: 30px;
+			height: 30px;
+			transition: 0.3s;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+	<ul id="desp">
+		<li><a href="#">Home</a>
+			<ul>
+                <li id="estilo"><a href="#">1</li></a>
+                <li id="estilo"><a href="#">2</li></a>
+                <li id="estilo"><a href="#">3</li></a>
+                <li id="estilo"><a href="#">4</li></a>
+                <li id="estilo"><a href="#">5</li></a>
+            </ul>
+        </li>
+       <li><a href="#">About</a>
+			<ul>
+                <li id="estilo"><a href="#">1</li></a>
+                <li id="estilo"><a href="#">2</li></a>
+                <li id="estilo"><a href="#">3</li></a>
+                <li id="estilo"><a href="#">4</li></a>
+                <li id="estilo"><a href="#">5</li></a>
+            </ul>
+        </li>
+       <li><a href="#">Services</a>
+			<ul>
+                <li id="estilo"><a href="#">1</li></a>
+                <li id="estilo"><a href="#">2</li></a>
+                <li id="estilo"><a href="#">3</li></a>
+                <li id="estilo"><a href="#">4</li></a>
+                <li id="estilo"><a href="#">5</li></a>
+            </ul>
+        </li>
+        <li><a href="#">Productos</a>
+			<ul>
+                <li id="estilo"><a href="#">1</li></a>
+                <li id="estilo"><a href="#">2</li></a>
+                <li id="estilo"><a href="#">3</li></a>
+                <li id="estilo"><a href="#">4</li></a>
+                <li id="estilo"><a href="#">5</li></a>
+            </ul>
+        </li>
+	</ul>
+	</nav>
+	<br>
+	<section>
+		<h1>Manuel Fernández Arjona</h1>
+	</section>
+</body>
+</html>
