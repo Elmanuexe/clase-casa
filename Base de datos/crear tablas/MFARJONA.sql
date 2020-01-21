@@ -110,11 +110,11 @@ ON DELETE SET NULL/*CASCADE, SET DEFAULT, NOTHING*/;
 --Nombre
 ALTER TABLE nombreViejo RENAME TO nombreNuevo;
 
---ADD Columnas
+--AÑADIR Columnas
 ALTER TABLE facturas ADD (fecha DATE);
---DROP Columnas
+--BORRAR Columnas
 ALTER TABLE facturas DROP (fecha);
---MODI Columnas
+--MODIFICAR Columnas
 ALTER TABLE facturas MODIFY(fecha TIMESTAMP);
 /*Incrementar precisión o anchura de los tipos de datos
 Solo se puede reducir la anchura si la anchura máxima de un campo si esa columna posee nulos en todos los registros, o todos los valores existentes tienen un tamaño menor o igual a la nueva anchura.
@@ -122,8 +122,16 @@ Se puede pasar de CHAR a VARCHAR2 y viceversa (si no se modifica la anchura)
 Se puede pasar de DATE a TIMESTAMP y viceversa
 Cualquier otro cambio solo es posible si la tabla está vacía
 Si, a través de este comando, modificamos el valor de la propiedad DEFAULT de una tabla, dicho cambio solo tendrá efecto en la inserción de nuevas filas.*/
---REN Columnas
+--RENOMBRAR Columnas
 ALTER TABLE facturas RENAME COLUMN fecha TO fechaYhora;
 
+--TABLAS SIN USAR
+ALTER TABLE personas SET UNUSED (n_seguridad_social, DNI);
+SELECT * FROM USER_UNUSED_COL_TABS;
+ALTER TABLE personas DROP UNUSED COLUMNS;
+
+--BORRAR RESTRICCIONES
+ALTER TABLE SAM01_ALUMNOS
+DROP CONSTRAINT CK_SAM01_ALUMNOS_MAYOR;
 
 

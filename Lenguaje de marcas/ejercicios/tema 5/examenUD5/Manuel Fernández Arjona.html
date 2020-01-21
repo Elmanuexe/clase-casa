@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>PC Regalo</title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		/*ESTILOS PARA EL EJERCICIO 1*/
+		*	{
+		    box-sizing: border-box;
+ 		    margin: 0;
+		    padding: 0;
+		}
+		nav {
+			background-color: lightblue;
+			height: 98px;
+		}
+
+		div{
+			list-style: none;
+		}
+		nav div li{ 
+				text-decoration: none;
+				color: white;
+				align-self: center;
+				display: flex;
+			    justify-content: center;
+			    align-items: center;
+			}
+		#logo{
+			height: 98px;
+			width: 155px;
+			background-image: url("img/logo_ejercicio1.png");
+		}
+		#izq{
+			display: flex;
+		}
+		#der{
+			display: flex;
+			flex-direction: row-reverse;
+		}
+
+
+		/*ESTILOS PARA EL EJERCICIO 2*/
+		@keyframes animacion{
+			from{
+				
+			}
+			to{
+				margin: 5px;
+			}
+		}
+		img{
+			animation: animacion;
+			animation-iteration-count: infinite;
+			animation-duration: 0.1s;
+
+		}
+		#posi{
+			position: static;
+		}
+	</style>
+</head>
+<body>
+
+	<!--HTML PARA EL EJERCICIO 1. No debes crear etiquetas nuevas, solo puedes añadir clases o ids-->
+	<nav>
+		<div>	
+			<div id="logo"></div>
+			<li id="izq">INICIO</li>		
+		</div>
+		<div id="der">			
+			<li>Buscar</li>		
+			<li>Contacto</li>
+			<li>Productos</li>		
+		</div>
+	</nav>
+
+	<!--HTML PARA EL EJERCICIO 2. Aquí sí puedes crear etiquetas-->
+	<div>
+		<img src="img/ejercicio2.png">
+	</div>
+
+	<div id="posi">
+	<h1>Manuel Fernández Arjona</h1>
+	</div>
+</body>
+</html>

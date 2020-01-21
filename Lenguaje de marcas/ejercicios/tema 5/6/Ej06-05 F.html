@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Ej 01</title>
+		<meta charset="UTF-8">
+		<style type="text/css">
+			*{
+			    box-sizing: border-box;
+			    margin: 0;
+			    padding: 0;
+			}
+
+			nav{
+				display: flex;
+				font-family: Arial;
+				font-size: 16pt;
+				margin: 40px;
+			}
+
+			
+			nav ul{
+				list-style: none;
+				display: flex;
+			}
+
+			nav ul a{  
+   			 	border: 2px solid white ;
+   			 	border-radius: 5px;
+ 			  	background-color: #29088A;
+				text-decoration: none;
+				color: white;
+				height: 50px;
+				width: 110px;
+				align-self: center;
+				display: flex;
+			    justify-content: center;
+			    align-items: center;	
+			}
+
+			nav ul a:hover {
+				background-color: #2E2EFE;
+				border: 2px solid black;
+			}
+			
+			.submenu{
+				display: block;
+				height: 0px;
+   				overflow: hidden;
+   				transition: height 2s; 
+			}
+			.submenu a{
+				background-color: orange;
+			}
+			.submenu a:hover{
+				background-color: white;
+				color: black;
+				border: 2px solid black ;
+			}
+			
+			nav ul li:hover .submenu#sb {
+				height: 250px;
+
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li><a href="#" >Menú</a>
+					<ul id="sb" class="submenu">
+						<li><a href="#">Submenú</a></li>
+						<li><a href="#">Submenú</a></li>
+						<li><a href="#">Submenú</a></li>
+						<li><a href="#">Submenú</a></li>
+						<li><a href="#">Submenú</a></li>
+					</ul>
+				</li>
+				<li><a href="#" >Menú</a>
+					<ul id="sb" class="submenu">
+						<li><a href="#">Submenú</a></li>
+						<li><a href="#">Submenú</a></li>
+						<li><a href="#">Submenú</a></li>
+						<li><a href="#">Submenú</a></li>
+						<li><a href="#">Submenú</a></li>
+					</ul>
+				</li>
+				<li><a href="#" >Menú</a>
+					<ul id="sb" class="submenu">
+						<li><a href="#">Submenú</a></li>
+						<li><a href="#">Submenú</a></li>
+						<li><a href="#">Submenú</a></li>
+						<li><a href="#">Submenú</a></li>
+						<li><a href="#">Submenú</a></li>
+					</ul>
+				</li>
+				<li><a href="#" >Menú</a>
+					<ul id="sb" class="submenu">
+						<li><a href="#">Submenú</a></li>
+						<li><a href="#">Submenú</a></li>
+						<li><a href="#">Submenú</a></li>
+						<li><a href="#">Submenú</a></li>
+						<li><a href="#">Submenú</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+
+	</body>
+</html>
