@@ -1,0 +1,66 @@
+CREATE TABLE TT_INVITADOS(
+    NROLINVITADO            NUMBER(9),
+    NOMBRE                  VARCHAR2(200),
+    CATEGORIA               VARCHAR2(50),
+    ORIGEN                  VARCHAR2(200),
+    
+    CONSTRAINT PK_TT_INVITADOS PRIMARY KEY (NROLINVITADO)
+);
+
+CREATE TABLE TT_TEATROS(
+    CODTEAT                 NUMBER(9),
+    NOMBRE                  VARCHAR2(200),
+    DIRECCION               VARCHAR2(100),
+    CANTASIENTOS            NUMBER(9),
+    
+    CONSTRAINT PK_TT_TEATROS PRIMARY KEY (CODTEAT)
+);
+
+CREATE TABLE TT_OBRAS(
+    CODOBRA                 NUMBER(9),
+    NOMBREOBRA              VARCHAR2(50),
+    AUTOR                   VARCHAR2(200),
+        
+    CONSTRAINT PK_TT_OBRAS PRIMARY KEY (CODOBRA)
+);
+
+CREATE TABLE TT_EXHIBE(
+    CODTEAT                 NUMBER(9),
+    FECHA                   VARCHAR2(8),
+    CODOBRA                 NUMBER(9),
+    
+    CONSTRAINT PK_TT_EXHIBE PRIMARY KEY (CODTEAT, FECHA)
+);
+
+CREATE TABLE TT_TIPOS_ASIENTOS(
+    TIPO                    VARCHAR2(20),
+    NOMBRE                  VARCHAR(50),
+    DESCRIPCION             VARCHAR2(300),
+    
+    CONSTRAINT PK_TT_TIPOS_ASIENTOS PRIMARY KEY (TIPO)
+);
+
+CREATE TABLE TT_ASIENTO_TIPOS(
+    NROASIENTO              NUMBER(9),
+    TIPO                    VARCHAR2(20),
+    
+    CONSTRAINT PK_TT_ASIENTO_TIPOS PRIMARY KEY (NROASIENTO)
+);
+
+CREATE TABLE TT_PRECIO(
+    CODTEAT                 NUMBER(9),
+    FECHA                   VARCHAR2(8),
+    TIPO                    VARCHAR2(20),
+    PRECIO                  NUMBER(3),
+
+    CONSTRAINT PK_TT_PRECIO PRIMARY KEY (CODTEAT, FECHA, TIPO)
+);
+
+CREATE TABLE TT_ENTRADAS(
+    CODTEAT                 NUMBER(9),
+    FECHA                   VARCHAR2(8),
+    NROASIENTO              NUMBER(9),
+    NROINVIT                NUMBER(9),
+
+    CONSTRAINT PK_TT_ENTRADAS PRIMARY KEY (CODTEAT, FECHA, NROASIENTO)
+);
