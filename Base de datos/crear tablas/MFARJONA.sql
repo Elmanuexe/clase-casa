@@ -141,3 +141,14 @@ INCREMENT BY 1;
 --USAR SECUENCIA
 SELECT numeroPlanta.NEXTVAL FROM DUAL;
 
+--MODIFICAR DATOS
+UPDATE clientes
+SET provincia='Ourense'
+WHERE provincia='Orense';
+
+UPDATE productos SET precio=precio*1.16;
+--si no se pone el where modificas todos los datos de la columna
+--SI AL ACTUALIZAR UNA TABLA QUIERO GARANTIZAR QUE SOLO SE MODIGICA UNA FILA EN LA CONDICION DEL WHERE TENDRA QUE COLOCARSE LA CLAVE PRIMARIA DE LA TABLA
+
+--DELETE TABLAS
+DELETE FROM empleados WHERE seccion=23;
