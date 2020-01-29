@@ -1,9 +1,9 @@
-package ejercicio3;
+package ejercicio03;
 
 public class CalcularArea {
 	/*
-	 * Realizar un programa que calcule el volumen de un cilindro. Vosotros debéis
-	 * decidir qué método usar y qué valores pasarle.
+	 * Realizar un programa que calcule el volumen de un cilindro. Vosotros debï¿½is
+	 * decidir quï¿½ mï¿½todo usar y quï¿½ valores pasarle.
 	 */
 	
 	public double CalcularAreaCilindro(double radio, double altura) {
