@@ -24,18 +24,31 @@ public class Ppal {
 		 * de la clase Maquina.
 		 */
 
-		int nTicket;
-		double precioTicket;
-		
+		Ticket Ticket1 = new Ticket(1.60, 0);
+
 		System.out.println("¿Eres cliente o revisor?");
 		System.out.println("1.Cliente\n2.Revisor");
 
 		switch (Leer.datoInt()) {
-			case 1:
-				System.out.println("¿Cuantos tickets quiere comprar?");
-				nTicket=Leer.datoInt();
-				System.out.println("¿Cuantos saltos?");
-				
+		case 1:
+			System.out.println("¿Cuantos tickets quiere comprar?");
+			Ticket1.setNumero(Leer.datoInt());
+			
+			System.out.println("Su cobro es de " + Ticket1.calcularTotal());
+			
+			System.out.println("Inserte el dinero que va a introducir");
+			Ticket1.setPago(Leer.datoDouble());
+			
+			System.out.printf("Aquí está su vuelta %.2f\n",Ticket1.calcularVuelta());
+			
+			break;
+
+		case 2:
+
+			System.out.println("¿Qué quiere hacer?");
+			System.out.println("1.Ver recaudación");
+			System.out.println("2.Cambiar el precio");
+
 		}
 
 	}
