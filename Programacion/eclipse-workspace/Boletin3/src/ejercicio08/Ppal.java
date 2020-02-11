@@ -24,33 +24,45 @@ public class Ppal {
 		 * de la clase Maquina.
 		 */
 
-		Ticket Ticket1 = new Ticket(1.60, 0);
+		Ticket Ticket1 = new Ticket(1.60);
+		Maquina Maquina1 = new Maquina(0, 0, 0, 0, 0);
+		do {
+			System.out.println("¿Eres cliente o revisor?");
+			System.out.println("1.Cliente\n2.Revisor");
 
-		System.out.println("¿Eres cliente o revisor?");
-		System.out.println("1.Cliente\n2.Revisor");
+			switch (Leer.datoInt()) {
+			case 1:
+				System.out.println("¿Cuantos tickets quiere comprar?");
+				Maquina1.setNumero(Leer.datoInt());
 
-		switch (Leer.datoInt()) {
-		case 1:
-			System.out.println("¿Cuantos tickets quiere comprar?");
-			Ticket1.setNumero(Leer.datoInt());
-			
-			System.out.println("Su cobro es de " + Ticket1.calcularTotal());
-			
-			System.out.println("Inserte el dinero que va a introducir");
-			Ticket1.setPago(Leer.datoDouble());
-			
-			System.out.printf("Aquí está su vuelta %.2f\n",Ticket1.calcularVuelta());
-			
-			break;
+				System.out.printf("Su cobro es de %.2f\n", Maquina1.calcularTotal());
 
-		case 2:
+				System.out.println("Inserte el dinero que va a introducir");
+				Maquina1.setPago(Leer.datoDouble());
+				Maquina1.sumaRecaudacion();
 
-			System.out.println("¿Qué quiere hacer?");
-			System.out.println("1.Ver recaudación");
-			System.out.println("2.Cambiar el precio");
+				System.out.printf("Aquí está su vuelta %.2f\n", Maquina1.calcularVuelta());
 
-		}
+				break;
+
+			case 2:
+
+				System.out.println("¿Qué quiere hacer?");
+				System.out.println("1.Ver recaudación\n2.Cambiar el precio");
+
+				switch (Leer.datoInt()) {
+				case 1:
+					Maquina1.getRecaudacion();
+					break;
+
+				case 2:
+					Ticket1.setPrecio(Leer.datoDouble());
+					break;
+				}
+
+			}
+
+		} while (1 > 0);
 
 	}
-
 }

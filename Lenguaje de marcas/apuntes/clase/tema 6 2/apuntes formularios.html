@@ -9,9 +9,9 @@
 
   <form name="Registro" action="" enctype="text/plain" / enctype="multipart/from-data" method="">
 
-    <label for="Nombre">Nombre*</label> <input type="text" name="Nombre" id="Nombre" size="50" maxlength="300" placeholder="Manue" required autofocus><br>
+    <label for="Nombre">Nombre:*</label> <input type="text" name="Nombre" id="Nombre" size="50" maxlength="300" placeholder="Manue" required autofocus><br>
 
-    Edad: <input type="number" name="edad" value="18"><br>
+    <label for="Edad">Edad: <input type="time" min="11:00" max="23:00" step="900" value="11:00" name="edad" value="18" pattern="[15-20]"></label><br>
 
     <input type="submit" value="Guardar">
 

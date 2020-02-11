@@ -152,3 +152,10 @@ UPDATE productos SET precio=precio*1.16;
 
 --DELETE TABLAS
 DELETE FROM empleados WHERE seccion=23;
+
+--CREAR INDICES
+CREATE INDEX nombre_completo
+ON clientes (apellido1, apellido2, nombre);
+
+--CREAR SINÓNIMOS
+CREATE SYNONYM nombre FOR objeto;
