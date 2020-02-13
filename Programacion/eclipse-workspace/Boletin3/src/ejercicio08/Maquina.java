@@ -7,7 +7,15 @@ public class Maquina {
 	private double total = 0;
 	private double pago = 0;
 	private double vuelta = 0;
+	Ticket Ticket1 = new Ticket(1.60);
 
+	public class A {
+		   public void unMetodoDeA() {
+		       B b = new B();
+		       b.unMetodoDeB();
+		   }
+		}
+	
 	public int getNumero() {
 		return numero;
 	}

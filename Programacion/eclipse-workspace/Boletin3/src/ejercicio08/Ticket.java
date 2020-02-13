@@ -4,17 +4,17 @@ public class Ticket {
 
 	// atributos
 	
-	private static double precio = 1.60;
-
-	public static double getPrecio() {
+	private double precio = 1.60;
+	
+	public double getPrecio() {
 		return precio;
 	}
 
-	public static void setPrecio(double precio) {
-		Ticket.precio = precio;
+	public void setPrecio(double precio) {
+		this.precio = precio;
 	}
-	
-	public double Ticket(double precio) {
+
+	public Ticket(double precio) {
 		this.precio=precio;
 	}
 }
