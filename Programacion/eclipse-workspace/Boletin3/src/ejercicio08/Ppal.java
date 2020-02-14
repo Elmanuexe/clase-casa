@@ -24,8 +24,8 @@ public class Ppal {
 		 * de la clase Maquina.
 		 */
 
-		Ticket Ticket1 = new Ticket(1.60);
-		Maquina Maquina1 = new Maquina(0, 0, 0, 0, 0, "1234");
+		Ticket Ticket1 = new Ticket(0);
+		Maquina Maquina1 = new Maquina(0, 0, 0, 0, 0, "1234", Ticket1);
 		String contrasena;
 		do {
 			System.out.println("¿Eres cliente o revisor?");
@@ -33,7 +33,7 @@ public class Ppal {
 
 			switch (Leer.datoInt()) {
 			case 1:
-				System.out.println("¿Cuantos tickets quiere comprar?");
+				System.out.println("¿Para cuantas personas quiere el Ticket?");
 				Maquina1.setNumero(Leer.datoInt());
 
 				System.out.printf("Su cobro es de %.2f\n", Maquina1.calcularTotal());
@@ -42,21 +42,23 @@ public class Ppal {
 				Maquina1.setPago(Leer.datoDouble());
 				Maquina1.sumaRecaudacion();
 
-				System.out.printf("Aquí está su vuelta %.2f\n", Maquina1.calcularVuelta());
+				System.out.printf("Aquí está su vuelta %.2f\nY su ticket:\n", Maquina1.calcularVuelta());
+				
+				Maquina1.mostrarTicket();
 
 				break;
 
 			case 2:
-				System.out.println("introduzca la contraseña");
+				System.out.println("Introduzca la contraseña");
 				contrasena = Leer.dato();
-				if (contrasena == Maquina1.getContrasena()) {
+				if (contrasena.equalsIgnoreCase(Maquina1.getContrasena())){
 					
 				System.out.println("¿Qué quiere hacer?");
 				System.out.println("1.Ver recaudación\n2.Cambiar el precio");
 
 				switch (Leer.datoInt()) {
 				case 1:
-					System.out.println(Maquina1.getRecaudacion());
+					System.out.printf("%.2f\n",Maquina1.getRecaudacion());
 					break;
 
 				case 2:

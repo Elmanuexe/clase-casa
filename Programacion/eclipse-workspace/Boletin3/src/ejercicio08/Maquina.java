@@ -4,10 +4,9 @@ public class Maquina {
 
 	private int numero;
 	private double recaudacion;
-	private double total = 0;
 	private double pago = 0;
-	private double vuelta = 0;
-	private String contrasena="1234";
+	private String contrasena = "1234";
+	private Ticket ticketMaquina;
 
 	public String getContrasena() {
 		return contrasena;
@@ -33,14 +32,6 @@ public class Maquina {
 		this.recaudacion = recaudacion;
 	}
 
-	public double getTotal() {
-		return total;
-	}
-
-	public void setTotal(double total) {
-		this.total = total;
-	}
-
 	public double getPago() {
 		return pago;
 	}
@@ -49,32 +40,61 @@ public class Maquina {
 		this.pago = pago;
 	}
 
-	public double getVuelta() {
-		return vuelta;
+	@Override
+	public String toString() {
+		return "Maquina [numero=" + numero + ", recaudacion=" + recaudacion + ", pago=" + pago
+				+ ", contrasena=" + contrasena + ", ticketMaquina=" + ticketMaquina + "]";
 	}
 
-	public void setVuelta(double vuelta) {
-		this.vuelta = vuelta;
+	public Maquina(int numero, double recaudacion, double total, double pago, double vuelta, String contrasena,
+			Ticket ticketMaquina) {
+		this.numero = numero;
+		this.recaudacion = recaudacion;
+		this.pago = pago;
+		this.contrasena = contrasena;
+		this.ticketMaquina = ticketMaquina;
 	}
 
-	public Maquina(int numero, double recaudacion, double total, double pago, double vuelta, String contrasena) {
-		this.numero=numero;
-		this.recaudacion=recaudacion;
-		this.total=total;
-		this.pago=pago;
-		this.vuelta=vuelta;
-		this.contrasena=contrasena;
-	}
-	
 	public double calcularTotal() {
-		return total = Ticket.getPrecio() * numero;
+
+		/*
+		 * Tenemos varias posibilidades 
+		 * OP1)
+		 * 
+		 * total=ticketMaquina.getPrecio() * numero; sin devolver nada 
+		 * OP2)
+		 * 
+		 * return ticketMaquina.getPrecio() * numero;
+		 * 
+		 * op3)En este caso en el que tenemos total como atributo, guardamos y
+		 * devolvemos
+		 * 
+		 * total=ticketMaquina.getPrecio() * numero; return total;
+		 */
+		return ticketMaquina.getPrecio() * numero;		
 	}
 
 	public double calcularVuelta() {
-		return vuelta = pago - total;
+
+		return pago - calcularTotal();
 	}
-	
+
 	public void sumaRecaudacion() {
-		recaudacion = recaudacion + Ticket.getPrecio() * getNumero();
+		recaudacion = recaudacion + calcularTotal();
+	}
+
+	public void mostrarTicket() {
+		System.out.println(" ______________________________");
+		System.out.println("|                              |");
+		System.out.println("|     Ticket metro Sevilla     |");
+		System.out.println("|                              |");
+		System.out.println("|                              |");
+		System.out.println("|                              |");
+		System.out.println("|         Válido para:         |");
+		System.out.println("|         " + getNumero() + " Personas           |");
+		System.out.println("|                              |");
+		System.out.println("|                              |");
+		System.out.println("|  "+calcularTotal()+" €                       |");
+		System.out.println("|______________________________|");
 	}
 }
