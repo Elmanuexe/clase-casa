@@ -25,7 +25,8 @@ public class Ppal {
 		 */
 
 		Ticket Ticket1 = new Ticket(1.60);
-		Maquina Maquina1 = new Maquina(0, 0, 0, 0, 0);
+		Maquina Maquina1 = new Maquina(0, 0, 0, 0, 0, "1234");
+		String contrasena;
 		do {
 			System.out.println("¿Eres cliente o revisor?");
 			System.out.println("1.Cliente\n2.Revisor");
@@ -46,13 +47,16 @@ public class Ppal {
 				break;
 
 			case 2:
-
+				System.out.println("introduzca la contraseña");
+				contrasena = Leer.dato();
+				if (contrasena == Maquina1.getContrasena()) {
+					
 				System.out.println("¿Qué quiere hacer?");
 				System.out.println("1.Ver recaudación\n2.Cambiar el precio");
 
 				switch (Leer.datoInt()) {
 				case 1:
-					Maquina1.getRecaudacion();
+					System.out.println(Maquina1.getRecaudacion());
 					break;
 
 				case 2:
@@ -61,7 +65,10 @@ public class Ppal {
 				}
 
 			}
-
+				else {
+					System.out.println("Error: Contraseña incorrecta");
+				}
+			}
 		} while (1 > 0);
 
 	}

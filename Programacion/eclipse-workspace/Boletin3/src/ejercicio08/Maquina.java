@@ -7,15 +7,16 @@ public class Maquina {
 	private double total = 0;
 	private double pago = 0;
 	private double vuelta = 0;
-	Ticket Ticket1 = new Ticket(1.60);
+	private String contrasena="1234";
 
-	public class A {
-		   public void unMetodoDeA() {
-		       B b = new B();
-		       b.unMetodoDeB();
-		   }
-		}
-	
+	public String getContrasena() {
+		return contrasena;
+	}
+
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
+	}
+
 	public int getNumero() {
 		return numero;
 	}
@@ -56,12 +57,13 @@ public class Maquina {
 		this.vuelta = vuelta;
 	}
 
-	public Maquina(int numero, double recaudacion, double total, double pago, double vuelta) {
+	public Maquina(int numero, double recaudacion, double total, double pago, double vuelta, String contrasena) {
 		this.numero=numero;
 		this.recaudacion=recaudacion;
 		this.total=total;
 		this.pago=pago;
 		this.vuelta=vuelta;
+		this.contrasena=contrasena;
 	}
 	
 	public double calcularTotal() {
@@ -73,6 +75,6 @@ public class Maquina {
 	}
 	
 	public void sumaRecaudacion() {
-		recaudacion = recaudacion + Ticket.getPrecio()*getNumero();
+		recaudacion = recaudacion + Ticket.getPrecio() * getNumero();
 	}
 }
