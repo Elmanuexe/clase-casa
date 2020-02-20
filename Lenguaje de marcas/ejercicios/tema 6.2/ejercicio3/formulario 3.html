@@ -1,128 +1,138 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-<title>Ejercicio 3 - Formulario de alta</title> 
-<meta charset="utf-8" /> 
-<style type="text/css"> 
-  #contenedor{
-    font-family: Arial, Helvetica, sans-serif;
-    color: grey;
-    font-size: small;
-  }
-  li{
-    color: black;
-    list-style: none;
-    font-weight: bold;
-  }
-  input{
-    border-radius: 3px;
-  }
-  span{
-    color: red;
-  }
-  label{
-    color: black;
-  }
-  ul{
-    border: 1px solid black;
-  }
-  li{
-    border: 1px solid black;
-  }
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ejercicio 3 - Formulario de alta</title>
+  <meta charset="utf-8" />
+  <style type="text/css">
+    #contenedor {
+      font-family: Arial, Helvetica, sans-serif;
+      color: grey;
+      font-size: small;
+    }
+
+    li {
+      color: black;
+      list-style: none;
+      font-weight: bold;
+    }
+
+    input {
+      border-radius: 3px;
+    }
+
+    span {
+      color: red;
+    }
+
+    label {
+      color: black;
+    }
+
+    #right{
+      float: right;
+    }
+    #left{
+      float: left;
+      margin-right: 30%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="contenedor">
+    <h2>Formulario de alta</h2>
+    <form method="post" action="#">
+      <ul>
+        <li>
+          <label class="titulo" for="nombre">Nombre y apellidos <span class="requerido">*</span></label>
+        </li>
+        <div id="left">
+          <span>
+            <input id="nombre" name="nombre" value="" /> <br>
+            <label for="nombre">Nombre</label> <br>
+          </span>
+          <span>
+            <input id="apellido1" name="apellido1" value="" /> <br>
+            <label for="apellido1">Primer apellido</label> <br>
+          </span>
+          <span>
+            <input id="apellido2" name="apellido2" value="" /> <br>
+            <label for="apellido2">Segundo apellido</label> <br>
+          </span>
+        </div>
+        <p class="ayuda" hidden>No te olvides de escribir también tu segundo apellido</p>
+        </li>
+        <div>
+        <li>
+          <label class="titulo" for="direccion">Dirección <span class="requerido">*</span></label>
+        </li>
+        <div id="right">
+
+            <input id="direccion" name="direccion" value="" />
+            <label for="direccion">Calle, número, piso, puerta</label>
+
   
-</style> 
-</head> 
-<body> 
-<div id="contenedor"> 
-<h2>Formulario de alta</h2> 
-<form method="post" action="#"> 
-<ul> 
-<li> 
-<label class="titulo" for="nombre">Nombre y apellidos <span class="requerido">*</span></label> 
-</li>
-<div> 
-<span> 
-<input id="nombre" name="nombre" value="" /> <br>
-<label for="nombre">Nombre</label> <br>
-</span> 
-<span> 
-<input id="apellido1" name="apellido1" value="" /> <br>
-<label for="apellido1">Primer apellido</label> <br>
-</span> 
-<span> 
-<input id="apellido2" name="apellido2" value="" /> <br>
-<label for="apellido2">Segundo apellido</label> <br>
-</span> 
-</div> 
-<p class="ayuda">No te olvides de escribir también tu segundo apellido</p> 
-</li> 
-<li> 
-<label class="titulo" for="direccion">Dirección <span class="requerido">*</span></label> 
-</li>
-<div> 
-<span> 
-<input id="direccion" name="direccion" value="" /> 
-<label for="direccion">Calle, número, piso, puerta</label> 
-</span> 
-<span> 
-<input id="codigopostal" name="codigopostal" value="" /> 
-<label for="codigopostal">Código postal</label> 
-</span> 
-<span> 
-<input id="municipio" name="municipio" value="" /> 
-<label for="municipio">Municipio</label> 
-</span> 
-<span> 
-<select id="provincia" name="provincia"> 
-<option value=""></option> 
-<option value="provincia1">Provincia 1</option> 
-<option value="provincia2">Provincia 2</option> 
-<option value="provincia3">Provincia 3</option> 
-</select> 
-<label for="provincia">Provincia</label> 
-</span> 
-<span> 
-<select id="pais" name="pais"> 
-<option value=""></option> 
-<option value="pais1">País 1</option> 
-<option value="pais2">País 2</option> 
-<option value="pais3">País 3</option> 
-</select> 
-<label for="pais">País</label> 
-</span> 
-</div> 
-<p class="ayuda">El código postal es imprescindible para poder recibir los pedidos</p> 
-</li> 
-<li> 
-<label class="titulo" for="email">Email</label> 
-</li>
-<div> 
-<span> 
-<input id="email" name="email" value="" /> 
-</span> 
-</div> 
-<p class="ayuda">Asegúrate de que sea válido</p> 
-</li> 
-<li> 
-<label class="titulo" for="telefonofijo">Teléfono <span class="requerido">*</span></label> 
-</li>
-<div> 
-<span> 
-<input id="telefonofijo" name="telefonofijo" value="" /> 
-<label for="telefonofijo">Fijo</label> 
-</span> 
-<span> 
-<input id="telefonomovil" name="telefonomovil" value="" /> 
-<label for="telefonomovil">Móvil</label> 
-</span> 
-</div> 
-<p class="ayuda">Sin prefijo de país y sin espacios en blanco</p> 
-</li> 
-<li> 
-<input id="alta" type="submit" value="Darme de alta &rarr;"/> 
-</li> 
-</ul> 
-</form> 
-</div> 
-</body> 
+            <input id="codigopostal" name="codigopostal" value="" />
+            <label for="codigopostal">Código postal</label>
+
+
+            <input id="municipio" name="municipio" value="" />
+            <label for="municipio">Municipio</label>
+
+        </div>
+          <span>
+            <select id="provincia" name="provincia">
+              <option value=""></option>
+              <option value="provincia1">Provincia 1</option>
+              <option value="provincia2">Provincia 2</option>
+              <option value="provincia3">Provincia 3</option>
+            </select>
+            <label for="provincia">Provincia</label>
+          </span>
+          <span>
+            <select id="pais" name="pais">
+              <option value=""></option>
+              <option value="pais1">País 1</option>
+              <option value="pais2">País 2</option>
+              <option value="pais3">País 3</option>
+            </select>
+            <label for="pais">País</label>
+          </span>
+        </div>
+        <p class="ayuda" hidden>El código postal es imprescindible para poder recibir los pedidos</p>
+        </li>
+        <li>
+          <label class="titulo" for="email">Email</label>
+        </li>
+        <div>
+          <span>
+            <input id="email" name="email" value="" />
+          </span>
+        </div>
+        <p class="ayuda">Asegúrate de que sea válido</p>
+        </li>
+        <li>
+          <label class="titulo" for="telefonofijo">Teléfono <span class="requerido">*</span></label>
+        </li>
+        <div>
+          <span>
+            <input id="telefonofijo" name="telefonofijo" value="" />
+            <label for="telefonofijo">Fijo</label>
+          </span>
+          <span>
+            <input id="telefonomovil" name="telefonomovil" value="" />
+            <label for="telefonomovil">Móvil</label>
+          </span>
+        </div>
+        <p class="ayuda">Sin prefijo de país y sin espacios en blanco</p>
+        </li>
+        <li>
+          <input id="alta" type="submit" value="Darme de alta &rarr;" />
+        </li>
+      </ul>
+    </form>
+  </div>
+</body>
+
 </html>

@@ -153,3 +153,51 @@ IF (X) THEN
  ELSE
  OTRA COSA
 END IF;
+
+--CASE
+CASE selector
+WHEN expresion1 THEN resultado1
+WHEN expresion2 THEN resultado2
+[ELSE resultadoElse]
+END;
+--Hay que tener en cuenta que la sentencia CASE sirve para devolver un valor y no para ejecutar una instrucción
+begin
+MENSAJE := CASE
+    WHEN V_EDAD >= 18 AND V_EDAD <25 THEN 'ERES MENOR'
+    WHEN V_EDAD >= 25 AND V_EDAD <30 THEN 'YA VAS SIENDO MAYOR'
+   
+    DBMS_OUTPUT.PUT_LINE('MENSAJE');
+END;
+
+--BUCLES
+--LOOP
+--El loop siempre se ejecuta una vez como mínimo
+DECLARE
+    cont NUMBER :=1;
+BEGIN
+    LOOP
+        DBMS_OUTPUT.PUT_LINE(cont);
+        EXIT WHEN cont=10;
+        cont:=cont+1;
+    END LOOP;
+END;
+
+--WHILE
+--Muy parecido a Java
+DECLARE
+    cont NUMBER :=1;
+BEGIN
+    WHILE cont<=10 LOOP
+        DBMS_OUTPUT.PUT_LINE(cont);
+        cont:=cont+1;
+    END LOOP;
+END;
+
+--FOR
+begin
+FOR i IN 1..10 LOOP
+    dbms_output.put_line(i);
+EXIT WHEN i=5;
+END LOOP;
+end;
+
