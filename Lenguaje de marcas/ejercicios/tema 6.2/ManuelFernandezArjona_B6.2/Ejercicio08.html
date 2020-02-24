@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+    *{
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    fieldset{
+        width: 350px;
+        padding: 3%;
+        background-color: #c8ffe6;
+        border: 5px  double  black;
+        border-radius: 5%;
+        text-align: center;
+    }
+    legend{
+        font-weight: bold;
+    }
+    input{
+        width: 150px;
+    }
+    span{
+        padding: 1%;
+    }
+    input[type=submit]{
+        width: 100%;
+    }
+
+    hr{
+        color: black;
+    }
+    </style>
+    <title>Ortiz Molde Sergio, Ejercicio 08</title>
+</head>
+<body>
+    <fieldset>
+        <form enctype="text/plain" enctype="multipart/form-data">
+            <legend>Reserva de una habitación de hotel</legend>
+            <hr>
+            <span>
+            <label for="huespedes">Huespedes</label><br>
+            <input type="number" name="huespedes" id="huespedes" step="1" value="0"><br>
+            </span>
+            <span>
+            <label for="fechaentrada">Fecha de entrada</label><br>
+            <input type="date" name="fechaentrada" id="fechaentrada"><br>
+            </span>
+            <span>
+            <label for="fechasalida">Fecha de salida</label><br>
+            <input type="date" name="fechasalida" id="fechasalida"><br>
+            </span>
+            <label for="tipodehabitacion">Tipo de habitación</label><br>
+            <input list="tipohabitacion"><br>
+            <datalist id="tipohabitacion">
+                <option value="Simple">
+                <option value="Doble">
+                <option value="Suite">
+                <option value="Presidencial">
+                <option value="Para pobres">
+            </datalist>
+            <label for="correo">Introduzca su correo electrónico</label>
+            <input type="email" name="correocliente" id="correocliente"><br>
+            <hr>
+            <input type="submit" value="Enviar">
+        </form>
+    </fieldset>
+</body>
+</html>

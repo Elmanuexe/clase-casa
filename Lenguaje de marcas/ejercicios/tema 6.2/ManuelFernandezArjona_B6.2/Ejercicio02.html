@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        fieldset{
+            border: 8px solid black;
+            width: 100px;
+        }
+
+        
+        div {
+            float: left;
+            width: 50%;
+        }
+    </style>
+    <title>Ortiz Molde Sergio, Ejercicio 02</title>
+</head>
+<body>
+    
+    <form name="Registro" enctype="text/plain" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Formulario de registro</legend>
+            <label for="nombreapellidos">Nombre y Apellidos: </label><br>
+            <input type="text" name="NombreApellidos" id="nombreapellidos" size="30" maxlength="50" placeholder="Introduce nombre y apellidos..." required><br>
+            
+            <label for="email">Email: </label><br>
+            <input type="email" name="Email" id="email" size="25" placeholder="Introduce tu email..." required><br>
+            
+            <label for="username">Nombre de usuario: </label><br>
+            <input type="text" name="NombreUsuario" id="nombreusuario" size="15" placeholder="Nombre de usuario..." required><br>
+            
+            <label for="contrasenya">Contraseña: </label><br>
+            <input type="password" name="Contrasenya" id="contrasenya" size="15" maxlength="16" required><br>
+            
+            <label for="repetircontraseña">Repite tu contraseña: </label><br>
+            <input type="password" name="RepetirContrasenya" id="repetircontrasenya" size="15" maxlength="16" required><br>
+            
+            <label for="Sexo">Sexo: </label><br>
+            <input type="radio" name="Sexo" id="hombre" value="Hombre">
+            <label for="Hombre">Hombre</label><br>
+            <input type="radio" name="Sexo" id="Mujer" value="Mujer">
+            <label for="Mujer">Mujer</label><br>
+            <input type="radio" name="Sexo" id="Otros" value="Otros">
+            <label for="Otros">Otros</label><br>
+
+            <label for="fechanacimiento">Fecha de Nacimiento: </label>
+            <input type="date" name="FechaNacimiento" id="fechanacimiento" min="1900/01/01"><br>
+
+            <label for="Aficiones">Aficiones: </label><br>
+            <div>
+                <input type="checkbox" name="Leer" id="Leer">
+                <label for="Leer">Leer</label><br>
+                <input type="checkbox" name="Ver la tele" id="Ver la tele">
+                <label for="Ver la tele">Ver la tele</label><br>
+                <input type="checkbox" name="Ir al Cine" id="iralcine">
+                <label for="Ir al cine">Ir al cine</label><br>
+                <input type="checkbox" name="Pescar" id="Pescar">
+                <label for="Pescar">Pescar</label><br>
+                <input type="checkbox" name="Pasear" id="Pasear">
+                <label for="Pasear">Pasear</label><br>
+                <input type="checkbox" name="Viajar" id="Viajar">
+                <label for="Viajar">Viajar</label><br>
+            </div>
+            <div>
+                <input type="checkbox" name="Dormir" id="Dormir">
+                <label for="Dormir">Dormir</label><br>
+                <input type="checkbox" name="Socializarse" id="Socializarse">
+                <label for="Socializarse">Socializarse</label><br>
+                <input type="checkbox" name="Coser" id="Coser">
+                <label for="Coser">Coser</label><br>
+                <input type="checkbox" name="Relajarse" id="Relajarse">
+                <label for="Relajarse">Relajarse</label><br>
+                <input type="checkbox" name="Artesanía" id="Artesanía">
+                <label for="Artesanía">Artesanía</label><br>
+                <input type="checkbox" name="Cocinar" id="Cocinar">
+                <label for="Cocinar">Cocinar</label><br>
+            </div>
+            <input type="image" value="Enviar" alt="submit" value="submit" src="img/enviar.png">
+    </fieldset>
+    </form>
+</body>
+</html>
