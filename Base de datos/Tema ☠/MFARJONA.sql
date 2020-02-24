@@ -162,6 +162,8 @@ WHEN expresion2 THEN resultado2
 [ELSE resultadoElse]
 END;
 --Hay que tener en cuenta que la sentencia CASE sirve para devolver un valor y no para ejecutar una instrucción
+DECLARE
+MENSAJE
 begin
 MENSAJE := CASE
     WHEN V_EDAD >= 18 AND V_EDAD <25 THEN 'ERES MENOR'
