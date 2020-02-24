@@ -4,13 +4,13 @@ public class Trabajador {
 	
 	private String nombre;
 	private String apellidos;
-	private int idTrabajador;
+	private String idTrabajador;
 	private double sueldo;
 	private String fechaNacimiento;
 	
 	
 
-	public Trabajador(String nombre, String apellidos, int idTrabajador, double sueldo, String fechaNacimiento) {
+	public Trabajador(String nombre, String apellidos, String idTrabajador, double sueldo, String fechaNacimiento) {
 		super();
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -27,11 +27,11 @@ public class Trabajador {
 		this.nombre = nombre;
 	}
 
-	public int getIdTrabajador() {
+	public String getIdTrabajador() {
 		return idTrabajador;
 	}
 
-	public void setIdTrabajador(int idTrabajador) {
+	public void setIdTrabajador(String idTrabajador) {
 		this.idTrabajador = idTrabajador;
 	}
 
