@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Examen 6.2</title>
+  <meta charset="utf-8" />
+  <style type="text/css">
+    div {
+      float: left;
+      width: 25%;
+    }
+
+    h1, h3 {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      text-align: center;
+    }
+    form{
+      border: 1px solid black;
+    }
+    #borde{
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>NoMePongoEsoNiLoc@</h1>
+  <h3>Alquiler Online de disfraces</h3>
+  <form>
+  <span>
+    <h2>Elija su disfraz</h2>
+    <label for="TipoD"><b>Tipo de Disfraz*</b></label>
+    <select id="TipoD" name="TipoD" required>
+      <option value=""></option>
+      <option value="tipo1">Disfraz completo</option>
+      <option value="tipo2">Solo Mascara</option>
+      <option value="tipo3">Solo Disfraz</option>
+    </select>
+    <br>
+    <label for="Genero"><b>Genero:* </b></label><br>
+    <input type="radio" name="Sexo" id="hombre" value="Hombre">
+    <label for="Hombre">Hombre</label>
+    <input type="radio" name="Sexo" id="Mujer" value="Mujer">
+    <label for="Mujer">Mujer</label>
+    <input type="radio" name="Sexo" id="Otros" value="Otros">
+    <label for="Otros">No binario</label>
+    </span>
+    <br>
+    <span>
+      <label for="fechaentrada"><b>Fecha y hora de entrada*</b></label><br>
+      <input type="datetime-local" name="fechaentrada" id="fechaentrada" required><br>
+    </span>
+    <span>
+      <label for="fechasalida"><b>Fecha y hora de salida*</b></label><br>
+      <input type="datetime-local" name="fechasalida" id="fechasalida" required><br>
+    </span>
+    <label for="Tematica"><b>Temática:</b> </label><br>
+    <div>
+      <input type="checkbox" name="animales" id="animales">
+      <label for="animales">animales</label><br>
+      <input type="checkbox" name="profesiones" id="profesiones">
+      <label for="profesiones">profesiones</label><br>
+      <input type="checkbox" name="deportes" id="deportes">
+      <label for="deportes">deportes</label><br>
+    </div>
+    <div>
+      <input type="checkbox" name="plantas" id="plantas">
+      <label for="plantas">plantas</label><br>
+      <input type="checkbox" name="Personajes de peliculas" id="Personajesdepeliculas">
+      <label for="Personajes de peliculas">Personajes de peliculas</label><br>
+      <input type="checkbox" name="Personajes de libros" id="Personajesdelibros">
+      <label for="Personajes de libros">Personajes de libros</label><br>
+    </div>
+    <div>
+      <input type="checkbox" name="Personajes de dibujos" id="Personajes de dibujos">
+      <label for="Personajes de dibujos">Personajes de dibujos</label><br>
+      <input type="checkbox" name="Personajes historicos" id="Personajes historicos">
+      <label for="Personajes historicos">Personajes historicos</label><br>
+      <input type="checkbox" name="Objetos cotidianos" id="Objetos cotidianos">
+      <label for="Objetos cotidianos">Objetos cotidianos</label><br>
+    </div>
+    <div>
+      <input type="checkbox" name="Vehiculos" id="Vehiculos">
+      <label for="Vehiculos">Vehiculos</label><br>
+      <input type="checkbox" name="Otras culturas" id="Otras culturas">
+      <label for="Otras culturas">Otras culturas</label><br>
+      <input type="checkbox" name="Inclasificables" id="Inclasificables">
+      <label for="Inclasificables">Inclasificables</label><br>
+    </div>
+    <br>
+    <span>
+      <label for="Peticiones especiales">¿Alguna peticion especial?</label><br>
+      <input type="text" name="Peticion especial" id="peticionespecial" size="30" maxlength="50"><br>
+    </span>
+    <span>
+      <h2>Datos del Cliente:</h2> <br>
+      <label for="nombreapellidos">Nombre y Apellidos: *</label><br>
+            <input type="text" name="NombreApellidos" id="nombreapellidos" size="30" maxlength="50" placeholder="Introduce nombre y apellidos..." required><br>
+     <label for="email">Email: *</label><br>
+            <input type="email" name="Email" id="email" size="25" placeholder="Introduce tu email..." required><br>      
+    <label for="telefono">Número de Teléfono: *</label><br>
+            <input type="number" name="Telefono" id="telefono" maxlength="9">
+    </span>
+    <br>
+    <span>
+      <h2>Datos de pago</h2>
+      <label for="telefono">Número de tarjeta: *</label><br>
+            <input type="number" name="tarjeta" id="tarjeta" maxlength="16" placeholder="16 cifras sin espacios"><br>
+      <label for="fechaca">Fecha de caducidad *</label><br>
+            <input type="month" name="fechacs" id="fechaca" required><br>
+      <label for="codigo">Código de seguridad *</label><br>
+            <input type="password" name="codigo" id="codigo" required size="10"><br>
+    </span>
+    <input type="submit" value="Solicitar reserva">
+    <input type="submit" value="Borrar formulario">
+  </form>
+
+</body>
+
+</html>
