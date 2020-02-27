@@ -36,6 +36,7 @@ public class Ppal {
 		
 		String nota;
 		String texto;
+		int contador=4;
 
 		List<Notas> listaN = new ArrayList<Notas>();
 		
@@ -54,11 +55,12 @@ public class Ppal {
 				nota=Leer.dato();
 				System.out.println("introduzca el texto de la nota");
 				texto=Leer.dato();
+				Notas ncontador = new Notas(contador, nota, texto);
+				contador++;				
+				c1.agregarNota(ncontador, listaN);
+			break;
+			case 2:
 				
-				Notas nNueva = new Notas(4, nota, texto);
-				System.out.println("Agregue un nombre a su nota");
-				
-				c1.agregarNota(nNueva, listaN);
 			break;
 			}
 		}while(1>0);

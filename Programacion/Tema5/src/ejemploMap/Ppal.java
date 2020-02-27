@@ -22,6 +22,7 @@ public class Ppal {
 		listado.put(1, p1);
 		listado.put(2, p2);
 		System.out.println(listado);
+		System.out.println(p1.hashCode());
 		
 		listado2.put(p3, s1);
 		listado2.put(p4, s2);
