@@ -2,12 +2,29 @@ package ejercicio09;
 
 public class Alumno {
 
+	private String nombre;
 	private double media;
 	private double entornos;
 	private double programacion;
 	private double baseDatos;
 	private double lenguaje;
-	private double[] notas = new double[5];
+	private int suspensos;
+	
+	public int getSuspensos() {
+		return suspensos;
+	}
+
+	public void setSuspensos(int suspensos) {
+		this.suspensos = suspensos;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 
 	public double getMedia() {
 		return media;
@@ -49,12 +66,14 @@ public class Alumno {
 		this.lenguaje = lenguaje;
 	}
 
-	public Alumno(double media, double entornos, double programacion, double baseDatos, double lenguaje) {
+	public Alumno(String nombre, double media, double entornos, double programacion, double baseDatos, double lenguaje, int suspensos) {
+		this.nombre = nombre;
 		this.media = media;
 		this.entornos = entornos;
 		this.programacion = programacion;
 		this.baseDatos = baseDatos;
 		this.lenguaje = lenguaje;
+		this.suspensos = suspensos;
 	}
 
 	public double calcularMedia() {

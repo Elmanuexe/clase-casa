@@ -5,67 +5,100 @@ import leer.Leer;
 public class Ppal {
 
 	public static void main(String[] args) {
+		/*
+		 * Crear un programa para poner las notas de un alumno. El programa debe poder
+		 * poner notas a un solo alumno, mostrar todas sus notas por pantalla, modificar
+		 * una nota, calcular la media y dar su número de suspensos. Se puede sin usar
+		 * arrays o guardando las notas en un array de doubles en lugar de una variable
+		 * para cada nota. (Opcional) Se puede añadir al programa la posibilidad de usar
+		 * el programa para varios alumnos, con lo que debemos usar arrays de alumnos
+		 * (arrays de objetos tipo Alumno)
+		 */
 
-		Alumno Alumno1 = new Alumno(0, 0, 0, 0, 0);
-		int suspensos=0;
+		Alumno lista[] = new Alumno[3];
+		int nAlumno = 0;
+		lista[0] = new Alumno("Manuel", 0, 0, 0, 0, 0, 0);
+		lista[1] = new Alumno("Angel", 0, 0, 0, 0, 0, 0);
+		lista[2] = new Alumno("Antonio", 0, 0, 0, 0, 0, 0);
 
-		System.out.println("Bienvenido, inserte las notas del alum1no");
-		System.out.print("Entornos:");
-		Alumno1.setEntornos(Leer.datoDouble());
-			if(Alumno1.getEntornos()<5) {
-				suspensos++;
+		for (int i = 0; i < lista.length; i++) {
+
+			System.out.println("Bienvenido, inserte las notas de " + lista[i].getNombre());
+			System.out.print("Entornos:");
+			lista[i].setEntornos(Leer.datoDouble());
+			if (lista[i].getEntornos() < 5) {
+				lista[i].setSuspensos(+1);
 			}
-		System.out.print("Programacion:");
-		Alumno1.setProgramacion(Leer.datoDouble());
-			if(Alumno1.getProgramacion()<5) {
-			suspensos++;
+			System.out.print("Programacion:");
+			lista[i].setProgramacion(Leer.datoDouble());
+			if (lista[i].getProgramacion() < 5) {
+				lista[i].setSuspensos(+1);;
+			}
+			System.out.print("Bases de Datos:");
+			lista[i].setBaseDatos(Leer.datoDouble());
+			if (lista[i].getBaseDatos() < 5) {
+				lista[i].setSuspensos(+1);;
+			}
+			System.out.print("Lenguaje de Marcas:");
+			lista[i].setLenguaje(Leer.datoDouble());
+			if (lista[i].getLenguaje() < 5) {
+				lista[i].setSuspensos(+1);;
+			}
 		}
-		System.out.print("Bases de Datos:");
-		Alumno1.setBaseDatos(Leer.datoDouble());
-			if(Alumno1.getBaseDatos()<5) {
-			suspensos++;
-		}
-		System.out.print("Lenguaje de Marcas:");
-		Alumno1.setLenguaje(Leer.datoDouble());
-			if(Alumno1.getLenguaje()<5) {
-			suspensos++;
-		}
-
 		do {
-
 
 			System.out.println("\n---¿Que quiere hacer ahora?---");
 			System.out.println("1.Mostrar notas\n2.Modificar notas\n3.Ver media\n4.Ver suspensos");
 
 			switch (Leer.datoInt()) {
 			case 1:
-				System.out.printf("\nEntornos: " + Alumno1.getEntornos() + "\nProgramacion: "
-						+ Alumno1.getProgramacion() + "\nBases de Datos: " + Alumno1.getBaseDatos()
-						+ "\nLenguaje de Marcas " + Alumno1.getLenguaje()+"\n");
+				System.out.println("¿De que alumno?");
+				for (int i = 0; i < lista.length; i++) {
+					System.out.println(i + ". " + lista[i].getNombre());
+				}
+				nAlumno = Leer.datoInt();
+				System.out.printf("\nEntornos: " + lista[nAlumno].getEntornos() + "\nProgramacion: "
+						+ lista[nAlumno].getProgramacion() + "\nBases de Datos: " + lista[nAlumno].getBaseDatos()
+						+ "\nLenguaje de Marcas " + lista[nAlumno].getLenguaje() + "\n");
 				break;
 			case 2:
+				System.out.println("¿De que alumno?");
+				for (int i = 0; i < lista.length; i++) {
+					System.out.println(i + ". " + lista[i].getNombre());
+				}
+				nAlumno = Leer.datoInt();
 				System.out.println("\n¿De que asignatura?");
 				System.out.println("1.Entornos\n2.Programacion\n3.Bases de Datos\n4.Lenguaje de Marcas");
 
 				switch (Leer.datoInt()) {
 				case 1:
-					Alumno1.setEntornos(Leer.datoDouble());
+					lista[nAlumno].setEntornos(Leer.datoDouble());
 					break;
 				case 2:
-					Alumno1.setProgramacion(Leer.datoDouble());
+					lista[nAlumno].setProgramacion(Leer.datoDouble());
 					break;
 				case 3:
-					Alumno1.setBaseDatos(Leer.datoDouble());
+					lista[nAlumno].setBaseDatos(Leer.datoDouble());
 					break;
 				case 4:
-					Alumno1.setLenguaje(Leer.datoDouble());
+					lista[nAlumno].setLenguaje(Leer.datoDouble());
 					break;
 				}
 			case 3:
-				System.out.println("La media de este alumno es de: " + Alumno1.calcularMedia());
+				System.out.println("¿De que alumno?");
+				for (int i = 0; i < lista.length; i++) {
+					System.out.println(i + ". " + lista[i].getNombre());
+				}
+				nAlumno = Leer.datoInt();
+				System.out.println("La media de este alumno es de: " + lista[nAlumno].calcularMedia());
 				break;
 			case 4:
-				System.out.println("El número de suspensos de este alumno es de: "+suspensos);
+				System.out.println("¿De que alumno?");
+				for (int i = 0; i < lista.length; i++) {
+					System.out.println(i + ". " + lista[i].getNombre());
+				}
+				nAlumno = Leer.datoInt();
+				System.out.println("El número de suspensos de este alumno es de: " + lista[nAlumno].getSuspensos());
 			}
 
 		} while (1 > 0);
