@@ -15,103 +15,42 @@ public class Ppal {
 		 * (arrays de objetos tipo Alumno)
 		 */
 
-		Alumno lista[] = new Alumno[3];
-		int nAlumno = 0;
-		int suspenso = 1;
-		lista[0] = new Alumno("Manuel", 0, 0, 0, 0, 0, 0);
-		lista[1] = new Alumno("Angel", 0, 0, 0, 0, 0, 0);
-		lista[2] = new Alumno("Antonio", 0, 0, 0, 0, 0, 0);
+		Asignatura listaAs[] = new Asignatura[4];
 
-		for (int i = 0; i < lista.length; i++) {
+		listaAs[0] = new Asignatura("Entornos", 6.5);
+		listaAs[1] = new Asignatura("Programacion",7.3);
+		listaAs[2] = new Asignatura("Base de Datos", 4.0);
+		listaAs[3] = new Asignatura("Lenguaje de marcas", 4.0);
 
-			System.out.println("\nBienvenido, inserte las notas de " + lista[i].getNombre());
-
-			System.out.print("Entornos:");
-			lista[i].setEntornos(Leer.datoDouble());
-
-			System.out.print("Programacion:");
-			lista[i].setProgramacion(Leer.datoDouble());
-
-			System.out.print("Bases de Datos:");
-			lista[i].setBaseDatos(Leer.datoDouble());
-
-			System.out.print("Lenguaje de Marcas:");
-			lista[i].setLenguaje(Leer.datoDouble());
-		}
-
+		Alumno Alumno1 = new Alumno("Manuel", listaAs, 0.0, 0);
+		
 		do {
-			System.out.println("\n---¿Que quiere hacer ahora?---");
+			System.out.println("\n===¿Que quiere hacer ahora?===");
 			System.out.println("1.Mostrar notas\n2.Modificar notas\n3.Ver media\n4.Ver suspensos");
 
 			switch (Leer.datoInt()) {
 			case 1:// Mostrar las notas de un alumno
-				System.out.println("¿De que alumno?");
-				for (int i = 0; i < lista.length; i++) {
-					System.out.println(i + ". " + lista[i].getNombre());
-				}
-				nAlumno = Leer.datoInt();
-				System.out.printf("\n" + lista[nAlumno].getNombre() + ":\nEntornos: " + lista[nAlumno].getEntornos()
-						+ "\nProgramacion: " + lista[nAlumno].getProgramacion() + "\nBases de Datos: "
-						+ lista[nAlumno].getBaseDatos() + "\nLenguaje de Marcas " + lista[nAlumno].getLenguaje()
-						+ "\n");
+				System.out.println("Las notas de alumno "+ Alumno1.getNombre());
+					Alumno1.mostrarNotas();
 				break;
 			case 2:// Modificar las notas de un alumno
-				System.out.println("¿De que alumno?");
-				for (int i = 0; i < lista.length; i++) {
-					System.out.println(i + ". " + lista[i].getNombre());
-				}
-				nAlumno = Leer.datoInt();
-				// Elegir la asignatura a modificar su nota
-				System.out.println("\n¿De que asignatura?");
-				System.out.println("1.Entornos\n2.Programacion\n3.Bases de Datos\n4.Lenguaje de Marcas");
-
-				switch (Leer.datoInt()) {
-				case 1:
-					lista[nAlumno].setEntornos(Leer.datoDouble());
-					break;
-				case 2:
-					lista[nAlumno].setProgramacion(Leer.datoDouble());
-					break;
-				case 3:
-					lista[nAlumno].setBaseDatos(Leer.datoDouble());
-					break;
-				case 4:
-					lista[nAlumno].setLenguaje(Leer.datoDouble());
-					break;
-				}
+					// Elegir la asignatura a modificar su nota
+					System.out.println("\n¿De que asignatura?");
+					for (int i = 0; i < listaAs.length; i++) {
+						System.out.println((i + 1) + ". " + listaAs[i].getNombre());
+					}
+					System.out.println("A continuacion inserte el número de asignatura y la nota por ese orden");
+					listaAs[Leer.datoInt()-1].setNota(Leer.datoDouble());
 				break;
 			case 3:// Mostrar la media de un alumno
-				System.out.println("¿De que alumno?");
-				for (int i = 0; i < lista.length; i++) {
-					System.out.println(i + ". " + lista[i].getNombre());
-				}
-				nAlumno = Leer.datoInt();
-				System.out.println("La media de este alumno es de: " + lista[nAlumno].calcularMedia());
+				System.out.println("La media de este alumno es de: " + Alumno1.calcularMedia());
 				break;
 			case 4:// Calcular y mostrar suspensos de un alumno
-				System.out.println("¿De que alumno?");
-				for (int i = 0; i < lista.length; i++) {
-					System.out.println(i + ". " + lista[i].getNombre());
-				}
-				nAlumno = Leer.datoInt();
-				if (lista[nAlumno].getEntornos() < 5) {
-					lista[nAlumno].setSuspensos(suspenso++);
-				}
-				if (lista[nAlumno].getProgramacion() < 5) {
-					lista[nAlumno].setSuspensos(suspenso++);
-				}
-				if (lista[nAlumno].getBaseDatos() < 5) {
-					lista[nAlumno].setSuspensos(suspenso++);
-				}
-				if (lista[nAlumno].getLenguaje() < 5) {
-					lista[nAlumno].setSuspensos(suspenso++);
-				}
-				suspenso = 1;
-				System.out.println("El número de suspensos de este alumno es de: " + lista[nAlumno].getSuspensos());
+				
+				System.out.println("El número de suspensos de este alumno es de: " + Alumno1.calcularSuspenso());
 			}
 			System.out.println(" ");
-			System.out.println(
-					"Introduzca un 0 para seguir con el programa (CUALQUIER otro número hará que el programa PARE)");
+			System.out.println("Introduzca un 0 para seguir con el programa (CUALQUIER otro número hará que el programa PARE)");
 		} while (Leer.datoInt() == 0);
 	}
 }
