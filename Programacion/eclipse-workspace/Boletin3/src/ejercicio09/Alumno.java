@@ -63,7 +63,7 @@ public class Alumno {
 		for (int i = 0; i < lista.length; i++) {
 			media = media + lista[i].getNota();
 		}
-		return media = media / lista.length;
+		return  media / lista.length;
 	}
 	
 	public int calcularSuspenso() {

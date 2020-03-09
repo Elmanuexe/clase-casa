@@ -40,6 +40,8 @@ public class Ppal {
 						System.out.println((i + 1) + ". " + listaAs[i].getNombre());
 					}
 					System.out.println("A continuacion inserte el número de asignatura y la nota por ese orden");
+					
+					
 					listaAs[Leer.datoInt()-1].setNota(Leer.datoDouble());
 				break;
 			case 3:// Mostrar la media de un alumno
